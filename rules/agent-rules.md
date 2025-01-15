@@ -15,7 +15,7 @@ IF new task/feature:
 
 IF bug fix/issue:
     USE: ⚠️
-    BEGIN: @workflows/bug-fix.md
+    BEGIN: @workflows/bug-fix.md // TODO: make this file
 
 IF edit/modify:
     USE: ✏️
