@@ -22,11 +22,13 @@ FIRST:
 
 ## Phase 1: Understanding
 FIRST:
+    VERIFY: Primary Workflow Step is "Phase 1: Understanding"
     Gather feature requirements
     Identify affected areas
     Check similar implementations
     UPDATE workflow-state.md:
         - Add relevant files to "Files Read" array
+        - Set Primary Workflow Step to "Phase 2: Planning"
 
 IF requirements vague or unclear:
     ASK: for info/clarification
@@ -38,12 +40,14 @@ IF similar code found:
 
 ## Phase 2: Planning
 THEN:
+    VERIFY: Primary Workflow Step is "Phase 2: Planning"
     List files to create/modify
     Identify dependencies
     Plan implementation steps
     UPDATE workflow-state.md:
         - Add target files to "Files to Modify" array
         - Set "Primary Task" Name and Description
+        - Set Primary Workflow Step to "Phase 3: Implementation"
 
 IF complex feature:
     BREAK INTO: smaller tasks
@@ -59,6 +63,7 @@ FOR EACH component task:
         - Update "Current Component Task":
             - Set Name and Description
             - List implementation steps
+            - Add final step: "VERIFY: implementation complete, return to primary workflow document and continue with Phase 4: Verification"
     
     FIRST: verify context
     THEN: implement changes
@@ -67,6 +72,7 @@ FOR EACH component task:
     UPDATE workflow-state.md:
         - Check completed task in "Derived Component Tasks"
         - Update "Files Read" and "Files to Modify" arrays
+        - Set Primary Workflow Step to "Phase 4: Verification"
 
 IF creating new file:
     ADD: types and documentation
